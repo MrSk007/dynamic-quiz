@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AvatarModule } from 'primeng/avatar';
@@ -7,7 +7,7 @@ import { AuthService } from '../../services';
 
 @Component({
     selector: 'app-navbar',
-    imports: [AvatarModule, AvatarGroupModule, CommonModule],
+    imports: [AvatarModule, AvatarGroupModule],
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss']
 })

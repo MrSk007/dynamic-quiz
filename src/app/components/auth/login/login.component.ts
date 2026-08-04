@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../services';
 import { PasswordModule } from 'primeng/password';
@@ -13,7 +13,7 @@ import { USER_NAME, USER_PWD } from '../../../constants';
 
 @Component({
     selector: 'app-login',
-    imports: [CommonModule, ReactiveFormsModule, ButtonModule, InputTextModule, PasswordModule, NavbarComponent, SafeUrlPipe, ProgressSpinnerModule],
+    imports: [ReactiveFormsModule, ButtonModule, InputTextModule, PasswordModule, NavbarComponent, SafeUrlPipe, ProgressSpinnerModule],
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
     encapsulation: ViewEncapsulation.None
