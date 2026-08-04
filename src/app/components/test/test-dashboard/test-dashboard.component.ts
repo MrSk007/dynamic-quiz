@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
@@ -14,6 +14,7 @@ import { TimeAgoPipe } from '../../../pipes';
     imports: [CommonModule, ButtonModule, TableModule, NavbarComponent, TimeAgoPipe],
     templateUrl: './test-dashboard.component.html',
     styleUrl: './test-dashboard.component.scss',
+    changeDetection: ChangeDetectionStrategy.Eager,
     encapsulation: ViewEncapsulation.None
 })
 export class TestDashboardComponent implements OnInit {

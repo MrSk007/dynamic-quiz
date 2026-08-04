@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
@@ -17,6 +17,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     imports: [CommonModule, ButtonModule, DialogModule, CardModule, NavbarComponent, TooltipModule, ProgressSpinnerModule],
     providers: [DialogService],
     templateUrl: './new-test.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./new-test.component.scss']
 })
 export class NewTestComponent implements OnInit {
