@@ -6,7 +6,7 @@ import { AuthService } from './services';
     selector: 'app-root',
     imports: [RouterOutlet],
     templateUrl: './app.component.html',
-    changeDetection: ChangeDetectionStrategy.Default,
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {

@@ -9,7 +9,7 @@ import { AuthService } from '../../services';
     selector: 'app-navbar',
     imports: [AvatarModule, AvatarGroupModule],
     templateUrl: './navbar.component.html',
-    changeDetection: ChangeDetectionStrategy.Default,
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {

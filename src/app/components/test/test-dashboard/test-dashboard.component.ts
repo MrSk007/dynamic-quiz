@@ -14,7 +14,7 @@ import { TimeAgoPipe } from '../../../pipes';
     imports: [CommonModule, ButtonModule, TableModule, NavbarComponent, TimeAgoPipe],
     templateUrl: './test-dashboard.component.html',
     styleUrl: './test-dashboard.component.scss',
-    changeDetection: ChangeDetectionStrategy.Default,
+    changeDetection: ChangeDetectionStrategy.Eager,
     encapsulation: ViewEncapsulation.None
 })
 export class TestDashboardComponent implements OnInit {
