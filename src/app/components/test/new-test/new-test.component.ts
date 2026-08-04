@@ -17,7 +17,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     imports: [CommonModule, ButtonModule, DialogModule, CardModule, NavbarComponent, TooltipModule, ProgressSpinnerModule],
     providers: [DialogService],
     templateUrl: './new-test.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.Default,
     styleUrls: ['./new-test.component.scss']
 })
 export class NewTestComponent implements OnInit {

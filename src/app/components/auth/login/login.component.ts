@@ -16,7 +16,7 @@ import { USER_NAME, USER_PWD } from '../../../constants';
     imports: [ReactiveFormsModule, ButtonModule, InputTextModule, PasswordModule, NavbarComponent, SafeUrlPipe, ProgressSpinnerModule],
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.Default,
     encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
