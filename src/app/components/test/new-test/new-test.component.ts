@@ -13,12 +13,11 @@ import { TooltipModule } from 'primeng/tooltip';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @Component({
-  selector: 'app-new-test',
-  standalone: true,
-  imports: [CommonModule, ButtonModule, DialogModule, CardModule, NavbarComponent, TooltipModule,ProgressSpinnerModule],
-  providers: [DialogService],
-  templateUrl: './new-test.component.html',
-  styleUrls: ['./new-test.component.scss']
+    selector: 'app-new-test',
+    imports: [CommonModule, ButtonModule, DialogModule, CardModule, NavbarComponent, TooltipModule, ProgressSpinnerModule],
+    providers: [DialogService],
+    templateUrl: './new-test.component.html',
+    styleUrls: ['./new-test.component.scss']
 })
 export class NewTestComponent implements OnInit {
   resultMessage: string = '';

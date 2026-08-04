@@ -6,11 +6,10 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
 import { AuthService } from '../../services';
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [AvatarModule, AvatarGroupModule, CommonModule],
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+    selector: 'app-navbar',
+    imports: [AvatarModule, AvatarGroupModule, CommonModule],
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
   currentRoute = "";

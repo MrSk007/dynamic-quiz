@@ -10,12 +10,11 @@ import { NavbarComponent } from '../../navbar/navbar.component';
 import { TimeAgoPipe } from '../../../pipes';
 
 @Component({
-  selector: 'app-test-dashboard',
-  standalone: true,
-  imports: [CommonModule,ButtonModule, TableModule,NavbarComponent,TimeAgoPipe],
-  templateUrl: './test-dashboard.component.html',
-  styleUrl: './test-dashboard.component.scss',
-  encapsulation:ViewEncapsulation.None
+    selector: 'app-test-dashboard',
+    imports: [CommonModule, ButtonModule, TableModule, NavbarComponent, TimeAgoPipe],
+    templateUrl: './test-dashboard.component.html',
+    styleUrl: './test-dashboard.component.scss',
+    encapsulation: ViewEncapsulation.None
 })
 export class TestDashboardComponent implements OnInit {
   lastSubmittedTest: Test | undefined;
