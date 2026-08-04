@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
@@ -10,12 +10,12 @@ import { NavbarComponent } from '../../navbar/navbar.component';
 import { TimeAgoPipe } from '../../../pipes';
 
 @Component({
-  selector: 'app-test-dashboard',
-  standalone: true,
-  imports: [CommonModule,ButtonModule, TableModule,NavbarComponent,TimeAgoPipe],
-  templateUrl: './test-dashboard.component.html',
-  styleUrl: './test-dashboard.component.scss',
-  encapsulation:ViewEncapsulation.None
+    selector: 'app-test-dashboard',
+    imports: [CommonModule, ButtonModule, TableModule, NavbarComponent, TimeAgoPipe],
+    templateUrl: './test-dashboard.component.html',
+    styleUrl: './test-dashboard.component.scss',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    encapsulation: ViewEncapsulation.None
 })
 export class TestDashboardComponent implements OnInit {
   lastSubmittedTest: Test | undefined;

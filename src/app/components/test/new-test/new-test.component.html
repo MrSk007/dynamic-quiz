@@ -1,47 +1,50 @@
 <main class="bg-primary">
   <app-navbar></app-navbar>
   <div class="w-100 bg-white quiz-wrapper">
-    <div class="p-5 m-1 quiz-section" *ngIf="questions.length > 0 && !isLoading">
-      <div class="question-content">
-        <div class="question-pagination">Question {{ currentQuestionIndex + 1 }} <span class="text-total">/ {{
-            questions.length }}</span></div>
-        <div class="quiz my-3">{{ questions[currentQuestionIndex]?.question }}</div>
-        <div class="button-group-quiz">
-          <button pButton pRipple label="Yes" icon="pi pi-bookmark-fill" (click)="answerQuestion('Yes')"
+    @if (questions.length > 0 && !isLoading) {
+      <div class="p-5 m-1 quiz-section">
+        <div class="question-content">
+          <div class="question-pagination">Question {{ currentQuestionIndex + 1 }} <span class="text-total">/ {{
+          questions.length }}</span></div>
+          <div class="quiz my-3">{{ questions[currentQuestionIndex]?.question }}</div>
+          <div class="button-group-quiz">
+            <button pButton pRipple label="Yes" icon="pi pi-bookmark-fill" (click)="answerQuestion('Yes')"
             class="my-2 full-stretch-button bg-white" [ngClass]="{'button-selected': isSelected('Yes')}"></button>
-          <button pButton pRipple label="No" icon="pi pi-bookmark-fill" (click)="answerQuestion('No')"
+            <button pButton pRipple label="No" icon="pi pi-bookmark-fill" (click)="answerQuestion('No')"
             class="my-2 full-stretch-button bg-white" [ngClass]="{'button-selected': isSelected('No')}"></button>
-        </div>
-        <div class="button-group-row my-3">
-          <div class="my-2">
-            <button pButton label="" icon="pi pi-chevron-left" pTooltip="Back" tooltipPosition="bottom"
-              (click)="previousQuestion()" class="mr-2 bg-primary-light no-border"
+          </div>
+          <div class="button-group-row my-3">
+            <div class="my-2">
+              <button pButton label="" icon="pi pi-chevron-left" pTooltip="Back" tooltipPosition="bottom"
+                (click)="previousQuestion()" class="mr-2 bg-primary-light no-border"
               [disabled]="currentQuestionIndex <= 0"></button>
-            <button pButton label="" icon="pi pi-chevron-right" pTooltip="Next" tooltipPosition="bottom"
-              class="bg-primary-light no-border" (click)="nextQuestion()"
+              <button pButton label="" icon="pi pi-chevron-right" pTooltip="Next" tooltipPosition="bottom"
+                class="bg-primary-light no-border" (click)="nextQuestion()"
               [disabled]="currentQuestionIndex >= questions.length - 1"></button>
-          </div>
-          <div class="my-2">
-            <button pButton label="Skip" [disabled]="isLastQuestion()"
+            </div>
+            <div class="my-2">
+              <button pButton label="Skip" [disabled]="isLastQuestion()"
               class="mr-2 bg-light-gray no-border text-analogous-dark-1" (click)="skipQuestion()"></button>
-            <button pButton label="Submit" class="bg-primary-complementary no-border" (click)="submit()"
+              <button pButton label="Submit" class="bg-primary-complementary no-border" (click)="submit()"
               [disabled]="!isLastQuestion()"></button>
+            </div>
           </div>
         </div>
-      </div>
-
-      <p-dialog header="Confirmation" [(visible)]="displayResultDialog" [modal]="true" [closable]="false"
-        [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [maximizable]="false">
-        <p>{{ resultMessage }}</p>
-        <p-footer>
-          <button pButton label="Back" class="mr-2 bg-light-gray no-border text-analogous-dark-1"
+        <p-dialog header="Confirmation" [(visible)]="displayResultDialog" [modal]="true" [closable]="false"
+          [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [maximizable]="false">
+          <p>{{ resultMessage }}</p>
+          <p-footer>
+            <button pButton label="Back" class="mr-2 bg-light-gray no-border text-analogous-dark-1"
             (click)="closeDialog(true)"></button>
-          <button pButton label="Confirm" class="bg-primary-complementary no-border" (click)="closeDialog()"></button>
-        </p-footer>
-      </p-dialog>
-    </div>
-    <div class="align-content-center" *ngIf="isLoading">
-      <p-progressSpinner ariaLabel="loading" />
-    </div>
+            <button pButton label="Confirm" class="bg-primary-complementary no-border" (click)="closeDialog()"></button>
+          </p-footer>
+        </p-dialog>
+      </div>
+    }
+    @if (isLoading) {
+      <div class="align-content-center">
+        <p-progressSpinner ariaLabel="loading" />
+      </div>
+    }
   </div>
 </main>

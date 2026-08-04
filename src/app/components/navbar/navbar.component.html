@@ -4,14 +4,18 @@
       Dynamic Quiz
     </div>
   </div>
-  <div *ngIf="currentRoute && currentRoute !== '/login'" class="top-bar right">
-    <div class="user-profile-container">
-      <a class="user-name text-white" href="https://www.linkedin.com/in/saravana-tn47" target="_blank">SARAVANA</a>
-      <p-avatar class="user-profile" label="U" styleClass="mx-2 mt-1"
-        [style]="{ 'background-color': '#ece9fc', color: '#2a1261' }" (click)="toggleDropdown()" />
-      <div *ngIf="isDropdownVisible" class="dropdown-menu">
-        <button (click)="logout()">Logout</button>
+  @if (currentRoute && currentRoute !== '/login') {
+    <div class="top-bar right">
+      <div class="user-profile-container">
+        <a class="user-name text-white" href="https://www.linkedin.com/in/saravana-tn47" target="_blank">SARAVANA</a>
+        <p-avatar class="user-profile" label="U" styleClass="mx-2 mt-1"
+          [style]="{ 'background-color': '#ece9fc', color: '#2a1261' }" (click)="toggleDropdown()" />
+          @if (isDropdownVisible) {
+            <div class="dropdown-menu">
+              <button (click)="logout()">Logout</button>
+            </div>
+          }
+        </div>
       </div>
-    </div>
+    }
   </div>
-</div>

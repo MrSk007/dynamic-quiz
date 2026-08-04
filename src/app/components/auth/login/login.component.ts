@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../services';
 import { PasswordModule } from 'primeng/password';
@@ -12,12 +12,12 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { USER_NAME, USER_PWD } from '../../../constants';
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, ButtonModule, InputTextModule, PasswordModule, NavbarComponent,SafeUrlPipe,ProgressSpinnerModule],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
-  encapsulation:ViewEncapsulation.None
+    selector: 'app-login',
+    imports: [ReactiveFormsModule, ButtonModule, InputTextModule, PasswordModule, NavbarComponent, SafeUrlPipe, ProgressSpinnerModule],
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
